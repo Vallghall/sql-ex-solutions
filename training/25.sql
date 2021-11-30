@@ -4,4 +4,6 @@ JOIN PC pc
     ON p.model=pc.model
 WHERE 
   pc.ram = (SELECT MIN(ram) FROM PC) AND 
-  pc.speed = (SELECT MAX(speed) FROM PC WHERE ram = (SELECT MIN(ram) FROM PC));
+  pc.speed = (SELECT MAX(speed) FROM PC WHERE ram = (SELECT MIN(ram) FROM PC))
+INTERSECT
+SELECT DISTINCT maker FROM Product WHERE type='Printer'
