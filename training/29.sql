@@ -8,4 +8,4 @@ SELECT o.point, o.date, SUM(i.inc), SUM(o.out)
     FROM Outcome_o o
     LEFT JOIN Income_o i
         ON i.point=o.point AND i.date=o.date
-    GROUP BY o.point, o.date
+    GROUP BY o.point, o.date;
